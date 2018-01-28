@@ -24,10 +24,10 @@ h1 {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 p {
-    font-size: 1.3em;
+    font-size: 1em;
     font-family: 'Helvetica Neue';
     line-height: 1em;
-    color: #333;
+    color: #808080;
 }
 footer {
     border-top: 1px solid #d5d5d5;
