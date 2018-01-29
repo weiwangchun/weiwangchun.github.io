@@ -8,7 +8,7 @@ body {
 nav ul, footer ul {
     font-family: 'Roboto', sans-serif;
     padding: 0px;
-    margin: 50px;
+    margin: 0px;
     list-style: none;
     width: 100px;
     font-weight: bold;
@@ -33,6 +33,7 @@ a:hover {
 h1 {
     font-size: 1.3em;
     font-family:'Lato', sans-serif;
+    margin: 100px;
 }
 
 h1:hover {
@@ -42,11 +43,13 @@ h1:hover {
 
 h2 {
     font-size: 1.3em;
+    margin: 100px;
 }
 
 h3 {
     font-size: 1.3em;
     font-family:'Lato', sans-serif;
+    margin: 100px;
 }
 
 
@@ -55,6 +58,7 @@ p {
     font-family: 'Roboto', sans-serif;
     line-height: 1em;
     color: #696969;
+    margin: 100px;
 }
 
 footer {
