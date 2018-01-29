@@ -20,7 +20,7 @@ nav ul li, footer ul li {
 a {
     text-decoration: none;
     color: #999;
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 a:hover {
@@ -38,7 +38,7 @@ h2 {
 
 p {
     font-size: 1em;
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1em;
     color: #696969;
 }
