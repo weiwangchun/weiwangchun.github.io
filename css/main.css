@@ -29,11 +29,11 @@ a:hover {
 }
 
 h1 {
-    font-size: 2.0em;
+    font-size: 1.3em;
     font-family:'Lato', sans-serif;
 }
 h2 {
-    font-size: 1.7em;
+    font-size: 1.3em;
 }
 
 h3 {
@@ -47,7 +47,7 @@ h3 {
 p {
     font-size: 1em;
     font-family: 'Roboto', sans-serif;
-    line-height: 1em;
+    line-height: 0.9em;
     color: #696969;
 }
 footer {
@@ -58,7 +58,7 @@ footer {
 
 ul.posts { 
     margin: 20px auto 40px; 
-    font-size: 1.5em;
+    font-size: 0.9em;
 }
 
 ul.posts li {
