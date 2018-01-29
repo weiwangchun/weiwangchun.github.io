@@ -33,7 +33,7 @@ a:hover {
 h1 {
     font-size: 1.3em;
     font-family:'Lato', sans-serif;
-    margin: 3px 100px 20px;
+    margin: 3px 150px 20px;
 }
 
 h1:hover {
@@ -56,7 +56,7 @@ p {
     font-family: 'Barlow Semi Condensed', serif;
     line-height: 1em;
     color: #696969;
-    margin: 0px 100px 10px;
+    margin: 0px 170px 10px;
 }
 
 footer {
