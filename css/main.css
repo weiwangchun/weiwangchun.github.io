@@ -36,6 +36,14 @@ h2 {
     font-size: 1.7em;
 }
 
+h3 {
+    font-size: 1.3em;
+    font-family:'Lato', sans-serif;
+}
+
+
+
+
 p {
     font-size: 1em;
     font-family: 'Roboto', sans-serif;
