@@ -1,14 +1,14 @@
 
 body {
-    margin: 20px auto;
-    width: 90%;
+    margin: 30px auto;
+    width: 100%;
     background-color: #ffffff;
 }
 
 nav ul, footer ul {
     font-family: 'Roboto', sans-serif;
     padding: 0px;
-    margin: 0px;
+    margin: 50px;
     list-style: none;
     width: 100px;
     font-weight: bold;
