@@ -1,9 +1,10 @@
 
 body {
-    margin: 60px auto;
+    margin: 20px auto;
     width: 70%;
     background-color: #ffffff;
 }
+
 nav ul, footer ul {
     font-family: 'Roboto', sans-serif;
     padding: 0px;
@@ -12,6 +13,7 @@ nav ul, footer ul {
     width: 100px;
     font-weight: bold;
 }
+
 nav ul li, footer ul li {
     display: inline;
     margin-right: 0px;
@@ -32,6 +34,12 @@ h1 {
     font-size: 1.3em;
     font-family:'Lato', sans-serif;
 }
+
+h1:hover {
+    background-color: #000000;
+    color: white;  
+}
+
 h2 {
     font-size: 1.3em;
 }
@@ -42,14 +50,13 @@ h3 {
 }
 
 
-
-
 p {
     font-size: 1em;
     font-family: 'Roboto', sans-serif;
-    line-height: 0.9em;
+    line-height: 1em;
     color: #696969;
 }
+
 footer {
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
