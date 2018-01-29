@@ -9,7 +9,7 @@ nav ul, footer ul {
     padding: 0px;
     margin: 0px;
     list-style: none;
-    width: 130px;
+    width: 100px;
     font-weight: bold;
 }
 nav ul li, footer ul li {
@@ -37,7 +37,7 @@ h2 {
 }
 
 h3 {
-    font-size: 0.7em;
+    font-size: 1.3em;
     font-family:'Lato', sans-serif;
 }
 
