@@ -3,44 +3,29 @@ layout: default
 title: Wang Chun Wei
 ---
 <style>
-.container {
-  position: relative;
-  width: 70%;
-  margin:0px 50px;
+.uni_profile_image:hover .overlay {
+	position:absolute;
+	cursor: pointer;
+	background: transparent url('black_white_uq.png') no-repeat;	
+}
+.journal_image:hover .overlay {
+	position:absolute;
+	cursor: pointer;
+	background: transparent url('black_white_journal.png') no-repeat;	
 }
 
-.image {
-  display: block;
-  width: 100%;
-  height: auto;
+.ssrn_profile_image:hover .overlay {
+	position:absolute;
+	cursor: pointer;
+	background: transparent url('black_white_ssrn.png') no-repeat;	
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: white;
+.photo_image:hover .overlay {
+	position:absolute;
+	cursor: pointer;
+	background: transparent url('black_white_photo.png') no-repeat;	
 }
-
-.container:hover .overlay {
-  opacity: 0.99;
-}
-
-.text {
-  color: black;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-30%, -30%);
-  -ms-transform: translate(-30%, -30%);
-  text-align: center;
-}
+	
 </style>
 
 <div class="blurb">
@@ -55,16 +40,36 @@ title: Wang Chun Wei
 
 	
 	<!-- <h1>Wang Chun Wei, PhD, CFA</h1> -->
-	
-	<div class="container">
-  		<img src="fly.jpg" alt="Avatar" class="image">
-  		<div class="overlay">
-    			<div class="text"> </div>
-  		</div>
+	<a href="https://www.business.uq.edu.au/staff/wang-chun-wei">
+	<div class="uni_profile_image">
+  		<img src="black_white.jpg" alt="Avatar" class="image">
+		<span class="overlay"> </span>
 	</div>
+	</a>
 	
-	<h2> Equity Strategies // Quantitative Research // Portfolio Construction // Risk Management <br>
-		Finance Lecturer @ UQ Business School </h2>
+	<a href="https://financialreview.poole.ncsu.edu/article_author/wang-chun-wei/">
+	<div class="journal_image">
+  		<img src="black_white.jpg" alt="Avatar" class="image">
+		<span class="overlay"> </span>
+	</div>
+	</a>
+	
+	<a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=1886430">
+	<div class="ssrn_profile_image">
+  		<img src="black_white.jpg" alt="Avatar" class="image">
+		<span class="overlay"> </span>
+	</div>
+	</a>
+	
+	<a href="https://www.linkedin.com/in/wang-chun-wei-phd-cfa-99a43a98/">
+	<div class="photo_profile_image">
+  		<img src="black_white.jpg" alt="Avatar" class="image">
+		<span class="overlay"> </span>
+	</div>
+	</a>
+	
+	<!--<h2> Equity Strategies // Quantitative Research // Portfolio Construction // Risk Management <br>
+		Finance Lecturer @ UQ Business School </h2>-->
 	
 	
 </div><!-- /.blurb -->
