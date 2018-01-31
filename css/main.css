@@ -6,7 +6,7 @@ body {
 }
 
 nav ul, footer ul {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Karla', sans-serif;
     padding: 0px;
     margin: 0px;
     list-style: none;
@@ -22,7 +22,7 @@ nav ul li, footer ul li {
 a {
     text-decoration: none;
     color: #999;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Karla', sans-serif;
 }
 
 a:hover {
@@ -56,7 +56,7 @@ h3 {
 
 p {
     font-size: 1em;
-    font-family: 'Barlow Semi Condensed', serif;
+    font-family: 'Open Sans', serif;
     line-height: 1em;
     color: #696969;
     margin: 0px 150px 10px;
@@ -71,10 +71,10 @@ footer {
 ul.posts { 
     margin: 20px auto 40px; 
     font-size: 0.9em;
-    font-family: 'Barlow Semi Condensed', serif;
+    font-family: 'Open Sans', serif;
 }
 
 ul.posts li {
     list-style: none;
-    font-family: 'Barlow Semi Condensed', serif;
+    font-family: 'Open Sans', serif;
 }
