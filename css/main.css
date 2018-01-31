@@ -11,7 +11,7 @@ nav ul, footer ul {
     margin: 0px;
     list-style: none;
     width: 100px;
-    font-weight: bold;
+    font-weight: lighter;
 }
 
 nav ul li, footer ul li {
