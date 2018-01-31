@@ -57,14 +57,16 @@ h3 {
 p {
     font-size: 1em;
     font-family: 'Open Sans', serif;
-    line-height: 1em;
+    font-weight: lighter;
+    line-height: 1.2em;
     color: #696969;
     margin: 0px 150px 10px;
 }
 
 footer {
-    border-top: 1px solid #d5d5d5;
+    border-top: 1px solid black;
     font-size: .8em;
+    background-color: #000000
 }
 
 
