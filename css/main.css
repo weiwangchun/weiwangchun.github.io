@@ -5,7 +5,7 @@ body {
     background-color: #ffffff;
 }
 
-nav ul, footer ul {
+nav ul {
     font-family: 'Karla', sans-serif;
     padding: 0px;
     margin: 0px;
@@ -14,10 +14,26 @@ nav ul, footer ul {
     font-weight: lighter;
 }
 
-nav ul li, footer ul li {
+nav ul li {
     display: inline;
     margin-right: 0px;
 }
+
+
+footer ul {
+    font-family: 'Karla', sans-serif;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    width: 600px;
+    font-weight: lighter;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 0px;
+}
+
 
 a {
     text-decoration: none;
