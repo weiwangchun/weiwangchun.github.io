@@ -4,15 +4,26 @@
 <script>
  
  var name = prompt('what is your name?')
- var apples = 5, pears = 10;
- var fruits = apples + pears;
- var i = 1;
- while ( i < 10 ) {
+
+ for (var i = 1; i < 3; i++) {
   alert(i);
-  i = i + 1;
- }
+ };
  
  
+ var add = function(a, b) {
+  return a + b;
+ };
+ 
+ var result = add(1,2);
+ 
+ // create an object 
+ var jedi = {
+  name: "Yoda",
+  age: 899,
+  talk: function(){alert("blah");}
+ };
+ 
+ jedi.talk();
  
 </script>
  
