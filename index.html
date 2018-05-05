@@ -37,15 +37,6 @@ title: Wang Chun Wei
 	<br>
 <script>
 
-function getWidth() {
-  return Math.max(
-    document.body.scrollWidth,
-    document.documentElement.scrollWidth,
-    document.body.offsetWidth,
-    document.documentElement.offsetWidth,
-    document.documentElement.clientWidth
-  );
-}
 
 var myGamePiece;
 var myObstacles = [];
@@ -60,7 +51,7 @@ function startGame() {
 var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
-        this.canvas.width = getWidth();
+        this.canvas.width = window.innerWidth;
         this.canvas.height = 500;
         this.canvas.style.cursor = "none"; //hide the original cursor
         this.context = this.canvas.getContext("2d");
