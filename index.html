@@ -51,13 +51,13 @@ function startGame() {
 var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
-        this.canvas.width = 1200;
+        this.canvas.width = 1600;
         this.canvas.height = 500;
         this.canvas.style.cursor = "none"; //hide the original cursor
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.frameNo = 0;
-        this.interval = setInterval(updateGameArea, 3);  // speed
+        this.interval = setInterval(updateGameArea, 5);  // speed
         window.addEventListener('mousemove', function (e) {
             myGameArea.x = e.pageX;
             myGameArea.y = e.pageY;
