@@ -38,18 +38,17 @@ title: Wang Chun Wei
 	<script>
 
 
-		document.body.appendChild((function(){
+document.body.appendChild((function(){
 	canvas=document.createElement('canvas')
-    canvas.width=w=400
-    canvas.height=h=300
-    canvas.style.border='1px dotted grey'
+    canvas.width=w=window.innerWidth;
+    canvas.height=h=window.innerHeight;
     ctx=canvas.getContext('2d')
     ctx.fillRect(0,0,canvas.width,canvas.height)
     ctx.fillStyle='#fff'
     return canvas
 })())
 pos=[]
-for(var i=0; i<10; i++){
+for(var i=0; i<50; i++){
 	pos.push([Math.random()*canvas.width,Math.random()*canvas.height])
 }
 step=function(){
