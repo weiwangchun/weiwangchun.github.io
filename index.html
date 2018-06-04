@@ -38,147 +38,162 @@ title: Wang Chun Wei
 <script>
 
 
-var myGamePiece;
-var myObstacles = [];
-var myScore;
+var canvasContainer = document.querySelector('#pjs');
 
-function startGame() {
-    myGamePiece = new component(30, 30, "red", 10, 120);
-    myScore = new component("1px", "Helvetica", "black", 10, 40, "text");
-    myGameArea.start();
+function setCanvasSize() {
+  canvasContainer.width = window.innerWidth;
+  canvasContainer.height = 300;
+  canvasContainer.style.width = window.innerWidth + 'px';
+  canvasContainer.style.height = 300 + 'px';
 }
 
-var myGameArea = {
-    canvas : document.createElement("canvas"),
-    start : function() {
-        this.canvas.width = window.innerWidth;
-        this.canvas.height = 500;
-        this.canvas.style.cursor = "none"; //hide the original cursor
-        this.context = this.canvas.getContext("2d");
-        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-        this.frameNo = 0;
-        this.interval = setInterval(updateGameArea, 5);  // speed
-        window.addEventListener('mousemove', function (e) {
-            myGameArea.x = e.pageX;
-            myGameArea.y = e.pageY;
-        })
-    },
-    clear : function() {
-        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    },
-    stop : function() {
-        clearInterval(this.interval);
-    }
-}
-
-function component(width, height, color, x, y, type) {
-    this.type = type;
-    this.width = width;
-    this.height = height;
-    this.speedX = 0;
-    this.speedY = 0;    
-    this.x = x;
-    this.y = y;    
-    this.update = function() {
-        ctx = myGameArea.context;
-        if (this.type == "text") {
-            ctx.font = this.width + " " + this.height;
-            ctx.fillStyle = color;
-            ctx.fillText(this.text, this.x, this.y);
-        } else {
-            ctx.fillStyle = color;
-            ctx.fillRect(this.x, this.y, this.width, this.height);
-        }
-    }
-    this.newPos = function() {
-        this.x += this.speedX;
-        this.y += this.speedY;        
-    }
-    this.crashWith = function(otherobj) {
-        var myleft = this.x;
-        var myright = this.x + (this.width);
-        var mytop = this.y;
-        var mybottom = this.y + (this.height);
-        var otherleft = otherobj.x;
-        var otherright = otherobj.x + (otherobj.width);
-        var othertop = otherobj.y;
-        var otherbottom = otherobj.y + (otherobj.height);
-        var crash = true;
-        if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
-            crash = false;
-        }
-        return crash;
-    }
-}
-
-function updateGameArea() {
-    var x, height, gap, minHeight, maxHeight, minGap, maxGap;
-    for (i = 0; i < myObstacles.length; i += 1) {
-        if (myGamePiece.crashWith(myObstacles[i])) {
-            myGameArea.stop();
-            return;
-        } 
-
-    }
-    myGameArea.clear();
-    myGameArea.frameNo += 1;
-    if (myGameArea.frameNo == 1 || everyinterval(150)) {
-        x = myGameArea.canvas.width;
-        minHeight = 20;
-        maxHeight = 480;
-        height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
-        minGap = 50;
-        maxGap = 100;
-        gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
-        myObstacles.push(new component(40, height, "white", x, 0));
-        myObstacles.push(new component(40, x - height - gap, "white", x, height + gap));
-    }
-    for (i = 0; i < myObstacles.length; i += 1) {
-        myObstacles[i].speedX = -1;
-        myObstacles[i].newPos();
-        myObstacles[i].update();
-    }
-    myScore.text="SCORE: " + myGameArea.frameNo;
-    myScore.update();
-    myGamePiece.newPos();    
-
-            if (myGameArea.x && myGameArea.y) {
-            myGamePiece.x = myGameArea.x;
-            myGamePiece.y = myGameArea.y;        
-        }
-
-    myGamePiece.update();
-}
-
-function everyinterval(n) {
-    if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
-    return false;
-}
-
-function moveup() {
-    myGamePiece.speedY = -1; 
-}
-
-function movedown() {
-    myGamePiece.speedY = 1; 
-}
-
-function moveleft() {
-    myGamePiece.speedX = -1; 
-}
-
-function moveright() {
-    myGamePiece.speedX = 1; 
-}
-
-function clearmove() {
-    myGamePiece.speedX = 0; 
-    myGamePiece.speedY = 0; 
-}
-
-
-startGame()
+function Wave(theta, y_off, stroke_color, stroke_opaque, grad_dir){
 	
+	var n_vertices = 20;
+	var w;              // Width of entire wave
+	var maxwaves = 3;   // total # of waves to add together
+	
+	var stroke_color = stroke_color || [200, 200, 200];
+	var stroke_width = 3;
+	var grad_dir = grad_dir || -1;
+	var stroke_opaque = stroke_opaque || 70;
+	
+	var theta = theta || random(0, 90);
+	var amplitude = new Array(maxwaves);   // Height of wave
+	var dx = new Array(maxwaves);
+	var yvalues;
+	var y_off = y_off || random(-40, 40);
+
+	function init(waves_param) {
+// 		console.log(theta, y_off);
+		w = width+360;
+		theta = (theta/180)*PI;
+
+		amplitude[0] = waves_param[0].amp ? waves_param[0].amp : random(10,15);
+		var period = waves_param[0].period ? waves_param[0].period : random(800,900); // Num pixels before wave repeats
+		dx[0] = (TWO_PI / period) * (w/n_vertices);
+// 		console.log(amplitude[0], period);
+
+		amplitude[1] = waves_param[1].amp ? waves_param[1].amp : random(20,25);
+		var period = waves_param[1].period ? waves_param[1].period : random(550,600); // Num pixels before wave repeats
+		dx[1] = (TWO_PI / period) * (w/n_vertices);
+// 		console.log(amplitude[1], period);
+
+		amplitude[2] = 20;
+		var period = 2000; // Num pixels before wave repeats
+		dx[2] = (TWO_PI / period) * (w/n_vertices);
+
+		yvalues = new Array(n_vertices);
+	}
+	
+	function calcWave() {
+	  theta += 0.015;
+	  // Set all height values to zero
+	  for (var i = 0; i < yvalues.length; i++) {
+	    yvalues[i] = 0;
+	  }
+	 
+	  // Accumulate wave height values
+	  for (var j = 0; j < maxwaves; j++) {
+	    var x = theta;
+	    for (var i = 0; i < yvalues.length; i++) {
+	      // Every other wave is cosine instead of sine
+	      yvalues[i] += sin(x)*amplitude[j];
+	      x+=dx[j];
+	    }
+	  }
+	}
+	
+	function renderWave() {
+		strokeWeight(stroke_width);
+		stroke(stroke_color);
+		noFill();
+		// A simple way to draw the wave with an ellipse at each location
+		
+		var grad_num = 10;
+		for (var y_grad = 0; y_grad < grad_num; y_grad++) {
+			var stroke_color_op = stroke_color.concat(stroke_opaque - (y_grad/grad_num * stroke_opaque));
+			stroke(stroke_color_op);
+			beginShape();
+			vertex(-100, -5);
+			for (var x = 0; x < yvalues.length; x++) {
+				curveVertex((x-1)*(w/n_vertices), height/2+yvalues[x] + y_off + grad_dir * y_grad * stroke_width);
+			}
+			vertex(width+100, -5);
+			endShape(CLOSE);
+		}		
+
+	}
+
+	return {
+		init: init,
+		calcWave: calcWave,
+		renderWave: renderWave
+	}
+};
+
+var waves = Array();
+var numOfWaves = 3;
+
+function setup() {
+// 	frameRate(30);
+	setCanvasSize();
+	var canvas = createCanvas(canvasContainer.width, canvasContainer.height, P2D);
+	canvas.parent('pjs');
+
+/*
+	for (var i=0; i < numOfWaves; i++) {
+		var wave = new Wave();
+		wave.init();
+		waves.push(wave);
+	}
+*/
+
+	var wave = new Wave(40.7831, -13.8384);
+	wave.init([{
+		amp: 11.6126,
+		period: 801.1247
+	}, {
+		amp: 21.4767,
+		period: 569.4705
+	}]);
+	waves.push(wave);
+	wave = new Wave(75.0861, -35.4808, null, null, 1);
+	wave.init([{
+		amp: 11.9808,
+		period: 890.9144
+	}, {
+		amp: 23.5858,
+		period: 587.9209
+	}]);
+	waves.push(wave);
+	wave = new Wave(85.8749, -16.2312);
+	wave.init([{
+		amp: 11.7457,
+		period: 852.8326
+	}, {
+		amp: 22.5081,
+		period: 551.103
+	}]);
+	waves.push(wave);
+
+}
+
+function draw() {
+	clear();
+	showFPS();
+	for (var i=0; i < numOfWaves; i++) {
+		waves[i].calcWave();
+		waves[i].renderWave();
+	}
+}
+
+function showFPS() {
+	var fps = frameRate();
+	fill(255);
+	stroke(0);
+	text("FPS: " + fps.toFixed(2), 10, height - 10);
+}
 
 	
 </script>
