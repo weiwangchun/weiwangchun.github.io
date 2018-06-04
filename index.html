@@ -3,35 +3,29 @@ layout: default
 title: Wang Chun Wei
 ---
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<style>
-	canvas {
-            border:1px solid #0C090A;
-            background-color: #0C090A;
-        }		
-</style>
 
 <div class="blurb">
 
-	<script>
+<script>
 
 document.body.appendChild((function(){
 	canvas=document.createElement('canvas')
-    canvas.width=w=window.innerWidth;
-    canvas.height=h=window.innerHeight;
-    ctx=canvas.getContext('2d')
-    ctx.fillStyle='white';
-    ctx.fillRect(0,0,canvas.width,canvas.height)
-    return canvas
+    	canvas.width=w=window.innerWidth * 0.9;
+    	canvas.height=h=window.innerHeight * 0.9;
+    	ctx=canvas.getContext('2d')
+    	ctx.fillStyle='white';
+    	ctx.fillRect(0,0,canvas.width,canvas.height)
+    	return canvas
 })())
 pos=[]
-for(var i=0; i<50; i++){
+for(var i=0; i<1; i++){
 	pos.push([Math.random()*canvas.width,Math.random()*canvas.height])
 }
 step=function(){
   with(Math){
     for(i in pos){
-    	pos[i][0]+=random()<.5?-random()*5:random()*5
-    	pos[i][1]+=random()<.5?-random()*5:random()*5
+    	pos[i][0]+=random()<.5?-random()*20:random()*20
+    	pos[i][1]+=random()<.5?-random()*20:random()*20
         pos[i][0]+=pos[i][0]<0?100:0
         pos[i][1]+=pos[i][1]<0?100:0
         pos[i][0]-=pos[i][0]>w?100:0
