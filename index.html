@@ -7,64 +7,87 @@ title: Wang Chun Wei
 <div class="blurb">
 
 <script>
-const cWidth = window.innerWidth * 0.9;
-const cHeight = window.innerHeight * 0.7;
-const pts1 = [{x:cWidth/2,y:cHeight/2}];
-const pts2 = [{x:cWidth/2,y:cHeight/2}];
-let color1 = 999;
-let color2 = 999;
-let randomSwitch = 0;
-let weight = 1;
-let i;
+(function(document) {
 
-function setup(){
-    createCanvas(cWidth,cHeight);
-    background(999);
-    frameRate(2);
-}
+	var canvas = document.createElement("canvas"),
+		context = canvas.getContext("2d"),
+		width = canvas.width = window.innerWidth * 0.9,
+		height = canvas.height = window.innerHeight * 0.7,
 
-function draw(){
-    addPoints(pts1);
-    addPoints(pts2);
-    fill(Math.random()*255);
-    stroke(Math.random()*255);
-    randomSwitch = Math.floor(Math.random()*3);
-    switch(randomSwitch){
-        case 0: 
-            beginShape(POINTS);
-            break;
-        case 1:
-            beginShape(TRIANGLES);
-            break;
-        case 2:
-            beginShape();
-            break;
-    }
-    drawPoints(pts1);
-    drawPoints(pts2);
-    endShape(CLOSE);
-}
+		circles = [],
+		mouseX = width * 0.5,
+		mouseY = height * 0.5,
+		newX = mouseX,
+		newY = mouseY,
+		count = 10;
 
+	document.body.appendChild(canvas);
 
-randomSwitch = Math.floor(Math.random()*3);
+	while (count--) {
+		circles.push({
+			radiusX: Math.random() * 100,
+			radiusY: Math.random() * 100,
+			radiusZ: Math.random() * 1,
+			angleX: 0,
+			angleY: 0,
+			angleZ: 0,
+			speedX: Math.max(0.03, Math.random() * 0.1),
+			speedY: Math.max(0.03, Math.random() * 0.1),
+			speedZ: Math.max(0.03, Math.random() * 0.05)
+		});
+	}
 
-function addPoints(pts){
-    const x = Math.random()*cWidth;
-    const y = Math.random()*cHeight;
-    pts.push({x:x,y:y});
-}
+	render();
 
-function drawPoints(pts){
-    const len = pts.length;
-    for(i=0;i<len;i++){
-        const x = pts[i].x;
-        const y = pts[i].y;
-        vertex(x,y);
-    }
-}
+	var i, c, x, y, z, alpha;
+	function render() {
+		context.fillStyle = "rgb(255, 255, 255)";
+		context.fillRect(0, 0, width, height);
 
+		i = circles.length;
+		while (i--) {
+			mouseX += (newX - mouseX) / 1000;
+			mouseY += (newY - mouseY) / 1000;
 
+			c = circles[i];
 
+			x = mouseX + Math.cos(c.angleX) * c.radiusX;
+			y = mouseY + Math.sin(c.angleY) * c.radiusY;
+			z = ((Math.sin(c.angleZ) * c.radiusZ) + 1) * 0.5;
+
+			alpha = z + 0.5;
+
+			x = x * 192 / (z + 192);
+			y = y * 192 / (z + 192);
+			z = (z + 1) * 3;
+
+			context.beginPath();
+			context.fillStyle = "rgba(0, 0, 0, " + alpha + ")";
+			context.arc(x, y, z, 0, Math.PI * 2, false);
+			context.fill();
+
+			c.angleX += c.speedX;
+			c.angleY += c.speedY;
+			c.angleZ += c.speedZ;
+		}
+
+		requestAnimationFrame(render);
+	}
+
+	function mousemove(e) {
+		newX = e.pageX;
+		newY = e.pageY;
+	}
+	window.addEventListener("mousemove", mousemove, false);
+	window.addEventListener("touchmove", mousemove, false);
+
+	function resize(e) {
+		width = canvas.width = window.innerWidth;
+		height = canvas.height = window.innerHeight;
+	}
+	window.addEventListener("resize", resize, false);
+
+})(window.document);
 
 		
 </script>
