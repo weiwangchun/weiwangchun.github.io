@@ -7,44 +7,67 @@ title: Wang Chun Wei
 <div class="blurb">
 
 <script>
+const cWidth = window.innerWidth * 0.9;
+const cHeight = window.innerHeight * 0.7;
+const pts1 = [{x:cWidth/2,y:cHeight/2}];
+const pts2 = [{x:cWidth/2,y:cHeight/2}];
+let color1 = 999;
+let color2 = 999;
+let randomSwitch = 0;
+let weight = 1;
+let i;
 
-document.body.appendChild((function(){
-	canvas=document.createElement('canvas')
-    	canvas.width=w=window.innerWidth * 0.9;
-    	canvas.height=h=window.innerHeight * 0.7;
-    	ctx=canvas.getContext('2d')
-    	ctx.fillStyle='white';
-    	ctx.fillRect(0,0,canvas.width,canvas.height)
-    	return canvas
-})())
-pos=[]
-for(var i=0; i<1; i++){
-	pos.push([Math.random()*canvas.width,Math.random()*canvas.height])
+function setup(){
+    createCanvas(cWidth,cHeight);
+    background(999);
+    frameRate(2);
 }
-step=function(){
-  with(Math){
-    for(i in pos){
-    	pos[i][0]+=random()<.5?-random()*4:random()*4
-    	pos[i][1]+=random()<.5?-random()*4:random()*4
-        pos[i][0]+=pos[i][0]<0?100:0
-        pos[i][1]+=pos[i][1]<0?100:0
-        pos[i][0]-=pos[i][0]>w?100:0
-        pos[i][1]-=pos[i][1]>h?100:0
+
+function draw(){
+    addPoints(pts1);
+    addPoints(pts2);
+    fill(Math.random()*255);
+    stroke(Math.random()*255);
+    randomSwitch = Math.floor(Math.random()*3);
+    switch(randomSwitch){
+        case 0: 
+            beginShape(POINTS);
+            break;
+        case 1:
+            beginShape(TRIANGLES);
+            break;
+        case 2:
+            beginShape();
+            break;
     }
-  }
+    drawPoints(pts1);
+    drawPoints(pts2);
+    endShape(CLOSE);
 }
-UPDATE=function(){
-  step()
-  for(i in pos){
-  	ctx.fillStyle='black'
-  	ctx.fillRect(pos[i][0],pos[i][1],4,4)
-  }
-  setTimeout(UPDATE,1000/60)
+
+
+randomSwitch = Math.floor(Math.random()*3);
+
+function addPoints(pts){
+    const x = Math.random()*cWidth;
+    const y = Math.random()*cHeight;
+    pts.push({x:x,y:y});
 }
-UPDATE()
+
+function drawPoints(pts){
+    const len = pts.length;
+    for(i=0;i<len;i++){
+        const x = pts[i].x;
+        const y = pts[i].y;
+        vertex(x,y);
+    }
+}
+
+
+
 
 		
-	 </script>
+</script>
 	
 </div><!-- /.blurb -->	
 
