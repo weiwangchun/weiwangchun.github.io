@@ -96,3 +96,24 @@ ul.posts li {
     list-style: none;
     font-family: 'Open Sans', serif;
 }
+
+container {
+	position: relative;
+	width: 10%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+}
+
+container:hover .overlay {
+	opacity: 1;
+}
