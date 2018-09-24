@@ -6,7 +6,7 @@ body {
 }
 
 nav ul {
-    font-family: 'Karla', sans-serif;
+    font-family: 'Lato', sans-serif;
     padding: 0px;
     margin: 0px;
     list-style: none;
@@ -21,7 +21,7 @@ nav ul li {
 
 
 footer ul {
-    font-family: 'Karla', sans-serif;
+    font-family: 'Lato', sans-serif;
     padding: 0px;
     margin: 0px;
     list-style: none;
@@ -38,7 +38,7 @@ footer ul li {
 a {
     text-decoration: none;
     color: #1dacd6;
-    font-family: 'Karla', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 a:hover {
