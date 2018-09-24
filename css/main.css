@@ -6,7 +6,7 @@ body {
 }
 
 nav ul {
-    font-family: 'Lato Thin', sans-serif;
+    font-family: 'Lato Light', sans-serif;
     padding: 0px;
     margin: 0px;
     list-style: none;
@@ -21,7 +21,7 @@ nav ul li {
 
 
 footer ul {
-    font-family: 'Lato Thin', sans-serif;
+    font-family: 'Lato Light', sans-serif;
     padding: 0px;
     margin: 0px;
     list-style: none;
@@ -38,7 +38,7 @@ footer ul li {
 a {
     text-decoration: none;
     color: #1dacd6;
-    font-family: 'Lato Thin', sans-serif;
+    font-family: 'Lato Light', sans-serif;
 }
 
 a:hover {
@@ -72,7 +72,7 @@ h3 {
 
 p {
     font-size: 1em;
-    font-family: 'Open Sans', serif;
+    font-family: 'Roboto', serif;
     font-weight: lighter;
     line-height: 1.2em;
     color: black;
