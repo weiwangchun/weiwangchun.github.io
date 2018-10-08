@@ -74,8 +74,9 @@ p {
     font-weight: lighter;
     line-height: 1.2em;
 	border-left: 1px solid black;
+	padding-left: 20px;
     color: black;
-    margin: 3px 150px 10px;
+    margin: 0px 150px 10px;
 }
 
 footer {
