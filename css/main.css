@@ -67,6 +67,16 @@ h3 {
 	margin: 3px 150px 20px;
 }
 
+h4 {
+    font-size: 1.3em;
+    font-family:'Raleway', sans-serif;
+	margin: 5px 0px 0px 0px;
+	border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    margin: 0px 450px 0px 50px;
+    padding-left: 60px;
+}
+
 
 p {
     font-size: 0.9em;
