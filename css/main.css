@@ -37,7 +37,7 @@ footer ul li {
 
 a {
     text-decoration: none;
-    color: #1dacd6;
+    color: #000000;
     font-family: 'Lato Light', sans-serif;
 }
 
@@ -52,10 +52,6 @@ h1 {
     margin: 3px 150px 20px;
 }
 
-h1:hover {
-    background-color: #000000;
-    color: white;  
-}
 
 h2 {
     font-size: 1.3em;
