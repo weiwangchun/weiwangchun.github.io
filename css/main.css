@@ -10,8 +10,9 @@ nav ul {
     padding: 0px;
     margin: 0px;
     list-style: none;
-	font-size: 1.0em;
-    width: 80px;
+	font-size: 0.9em;
+	border-right: 1px solid black;
+    width: 70px;
     font-weight: lighter;
 }
 
@@ -70,7 +71,7 @@ h3 {
 
 p {
     font-size: 1em;
-    font-family: 'Roboto', serif;
+    font-family: 'Open Sans', serif;
     font-weight: lighter;
     line-height: 1.2em;
     color: black;
