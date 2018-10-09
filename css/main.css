@@ -61,8 +61,10 @@ h2 {
 
 h3 {
     font-size: 1.3em;
-    font-family:'Lato', sans-serif;
+    font-family:'Merriweather', sans-serif;
 	margin: 3px 150px 20px;
+	padding-top: 20px;
+	border-top: 1px solid black;
 }
 
 
