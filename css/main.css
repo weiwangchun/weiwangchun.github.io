@@ -12,6 +12,7 @@ nav ul {
 	margin: 3px 150px 0px 150px;
     list-style: none;
 	font-size: 1.0em;
+	border-bottom: 1px solid black;
 }
 
 nav ul li {
