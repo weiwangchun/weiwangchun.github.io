@@ -5,6 +5,23 @@ body {
     background-color: #ffffff;
 }
 
+nav {
+	float: left;
+	width: 30%;
+}
+
+article{
+	float: left;
+	width: 70%;
+}
+
+section:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
 nav ul {
     font-family: 'Roboto', sans-serif;
     padding: 0px;
