@@ -6,11 +6,11 @@ body {
 }
 
 nav ul {
-    font-family: 'Merriweather Bold', serif;
+    font-family: 'Merriweather', serif;
     padding: 0px;
     margin: 0px;
     list-style: none;
-	font-size: 1.25em;
+	font-size: 1.2em;
     width: 60px;
 }
 
