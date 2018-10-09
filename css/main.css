@@ -9,10 +9,10 @@ body {
 nav ul {
     font-family: 'Roboto', sans-serif;
     padding: 0px;
-    margin: 0px;
+	margin: 3px 150px 0px 150px;
     list-style: none;
 	font-size: 1.0em;
-    width: 60px;
+
 }
 
 nav ul li {
