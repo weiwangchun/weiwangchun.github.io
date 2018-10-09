@@ -62,7 +62,7 @@ h2 {
 h3 {
     font-size: 1.3em;
     font-family:'Roboto', sans-serif;
-	margin: 3px 0px 0px 150px;
+	margin: 3px 150px 0px 150px;
 	padding-top: 20px;
 	border-top: 1px solid black;
 }
@@ -82,6 +82,7 @@ p {
 footer {
     border-top: 1px solid black;
     font-size: .8em;
+	margin: 3px 150px 0px 0px;
     background-color: white;
 }
 
