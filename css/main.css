@@ -115,3 +115,11 @@ ul.posts li {
   display: block;
 }
 
+
+.imageBanner{
+	position: relative;
+	float: left;
+	width: 100%;
+	margin: 3px 150px 0px 0px;
+}
+
