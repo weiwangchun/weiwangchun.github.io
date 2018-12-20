@@ -7,9 +7,9 @@ body {
 
 
 nav ul {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Lato', sans-serif;
     padding: 0px;
-	margin: 3px 30px 0px 30px;
+	margin: 3px 150px 0px 150px;
     list-style: none;
 	font-size: 1.0em;
 	border-bottom: 1px solid black;
@@ -48,7 +48,7 @@ a:hover {
 
 h1 {
     font-size: 1.3em;
-    font-family:'Roboto', sans-serif;
+    font-family:'Raleway', sans-serif;
     margin: 3px 150px 20px;
 }
 
@@ -62,7 +62,7 @@ h2 {
 
 h3 {
     font-size: 1.3em;
-    font-family:'Roboto', sans-serif;
+    font-family:'Raleway', sans-serif;
 	margin: 3px 150px 0px 150px;
 	padding-top: 20px;
 	border-top: 1px solid black;
