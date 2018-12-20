@@ -48,7 +48,7 @@ a:hover {
 
 h1 {
     font-size: 1.3em;
-    font-family:'Raleway', sans-serif;
+    font-family:'Major Mono Display', sans-serif;
     margin: 3px 150px 20px;
 }
 
@@ -62,7 +62,7 @@ h2 {
 
 h3 {
     font-size: 1.3em;
-    font-family:'Raleway', sans-serif;
+    font-family:'Major Mono Display', sans-serif;
 	margin: 3px 150px 0px 150px;
 	padding-top: 20px;
 	border-top: 1px solid black;
