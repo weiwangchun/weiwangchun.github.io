@@ -660,7 +660,7 @@ input::-moz-focus-inner {
 }
 
 .wide {
-  max-width: 1300px;
+  max-width: 1250px;
 }
 
 .narrow {
@@ -692,7 +692,7 @@ header {
 
 header .row {
   height: auto;
-  max-width: 1300px;
+  max-width: 1250px;
   position: relative;
 }
 
@@ -1667,7 +1667,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 }
 
 #teaching .about-wrap {
-  max-width: 950px;
+  max-width: 1250px;
 }
 
 #teaching span {
