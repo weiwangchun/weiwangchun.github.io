@@ -1467,11 +1467,11 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 
 #resume .overlay {
   position: absolute;
-  top: 80%;
-  left: 15%;
+  top: 0%;
+  left: 0%;
   width: 100%;
   height: 100%;
-  opacity: 0.01;
+  opacity: 0.1;
   background-image: url('../images/sydney.jpg');
   background-size: cover; 
 }
@@ -1500,19 +1500,22 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   width: 3px;
   height: 10rem;
   background-color: white;
-  margin: 0 0 1rem auto ;
+  margin: 0 0 1rem 85% ;
 }
 
 #resume p {
   font-family: "montserrat-regular", sans-serif;
   font-size: 2.1rem;
-/*  line-height: 1.667; */
+  line-height: 1.667; 
   color: white;
 /*  letter-spacing: .3rem; */
   position: relative;
-  padding: 0 0 0 6rem;
+  padding: 0 0 0 6rem; 
 }
 
+#resume p:hover {
+  color: orange;
+}
 
 
 /* Slideshow styles */
@@ -1526,7 +1529,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 
 #resume .slides {
   display: none; /* hide the slides until needed */
-  max-width: 950px;
+  max-width: 1250px;
 }
 
 /* Next & previous buttons */
