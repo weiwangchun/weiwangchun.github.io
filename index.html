@@ -17,7 +17,7 @@
                 --wetSand: white;
                 --black: #2B2B2B;
                 --grey: grey;
-                --orange: darkorange;
+                --orange: #20C073;
                 --size40: 40px;
                 --size8: 8px;
             }
@@ -39,14 +39,14 @@
 
             a {
                 text-decoration: none;
-                text-transform: uppercase;
                 color: var(--black);
                 opacity: 1;
-                transition: all 0.4s;
+                transition: all 0.6s;
             }
 
             a:hover {
                 color: var(--orange);
+                
             }
 
             main {
@@ -75,14 +75,19 @@
             h1 {
                 font-size: 64px;
                 margin-bottom: 10px;
+                color: var(--wetSand);
             }
+
             h2 {
                 font-size: 24px;
                 margin-bottom: 10px;
             }
+            .left-align {
+                text-align: right;
+            }
             p {
                 font-size: 16px;
-                line-height: 1;
+                line-height: 1.1;
                 margin-bottom: 10px;
                 color: var(--black);
             }
@@ -101,6 +106,7 @@
                 outline: none;
                 cursor: pointer;
                 transition: 0.5s;
+                color: var(--black);
             }
 
             /* Change background color of tabs on hover */
@@ -125,24 +131,56 @@
                 max-width: 100%;
                 }
             }
+
             .space {
-                margin-bottom: 450px; 
+                margin-bottom: 150px; 
             }
 
-            .typing-animation {
-                overflow: hidden;
-                white-space: nowrap;
-                animation: typing 3s steps(40, end);
+            .anim {
+                display: inline-block;
+                position: relative;
+                margin: 10px;
+                cursor: pointer;
             }
 
-            @keyframes typing {
-                from {
-                    width: 0;
-                }
-                to {
-                    width: 100%;
-                }
+            .anim-btn {
+                width: 4em;
             }
+
+            .anim-text {
+            display: inline-block;
+            position: absolute;
+            left: -2px;
+            top:  -2px;
+            width: 0;
+            height: 1.3em;
+            background: var(--wetSand);
+            white-space: nowrap;
+            overflow: hidden;
+            }
+
+            .anim-btn:hover {
+                color: var(--wetSand);
+            }
+
+            .anim:hover .anim-text {
+            width: 15em;
+            border-right: 2px solid var(--black);
+            color: var(--black);
+            animation: type 1s steps(8,end),
+                        blink 1.1s linear 1s infinite;
+            animation-fill-mode: forwards;
+            }
+
+            @keyframes type {
+                from { width: 0; } 
+            } 
+
+            @keyframes blink { 
+                45% { border-right: 2px solid var(--wetSand); } 
+                100% { border-right: 2px solid var(--wetSand); } 
+            } 
+
 
         </style>
     </head>
@@ -152,7 +190,11 @@
         <div class="container">
             <h2>WANG CHUN WEI</h2>
             <div class="space"></div>
-            <h1 class="typing-animation">韦汪漘 // quantitative finance</h1>
+            <h1 class="anim">
+                <span class="anim-btn"> CV >>>>>>>>> </span>
+                <span class="anim-text">韦汪漘 // quantitative finance</span>
+            </h1>
+              
             <!-- Create the tab buttons -->
             <div class="tab">
               <button class="tablinks" onclick="openTab(event, 'Research')" id="defaultOpen"><h2> > Research</h2></button>
@@ -164,14 +206,14 @@
                 <hr class="thick-line">
                 <h2> Journal Articles </h2>
                 <hr class="thin-line">
-                    <p> Koutmos D and WC Wei (2023)  'Nowcasting Bitcoin's crash risk with order imbalance', <cite> Review of Quantitative Finance and Accounting </cite>, 1-30  </p> <a href="https://link.springer.com/article/10.1007/s11156-023-01148-1">[Link]</a>
-                    <p> Wei WC and D Koutmos (2023)  'Investor Attention and Bitcoin Trading Behaviors' <cite>Essays on Financial Analytics</cite>, Springer </p>
-                    <p> Humphrey J, Hunter D, Hoang K and WC Wei (2020) 'Managerial rents vs. shareholder value in closed-end funds: evidence from China', <cite> Pacific-Basin Finance Journal</cite>, vol.64, 1014-53 </p> <a href="https://www.sciencedirect.com/science/article/pii/S0927538X2030665X">[Link]</a>
-                    <p> Wei WC (2018)  'The impact of Tether grants on Bitcoin', <cite>Economics Letters</cite>, vol.171, pp. 19-22 </p>  <a href="https://www.sciencedirect.com/science/article/pii/S0165176518302556">[Link]</a>
-                    <p> Wei WC (2018)  'Liquidity and market efficiency in cryptocurrencies', <cite>Economics Letters</cite>, vol.168, pp. 21-24  </p> <a href="https://www.sciencedirect.com/science/article/pii/S0165176518301320">[Link]</a>
-                    <p> Gan Q, Wei WC and Johnstone D (2017)  'Does the Probability of Informed Trading Model Fit Empirical Data?', <cite>Financial Review</cite>, vol.52:1, pp. 5-35 </p>  <a href="http://dx.doi.org/10.1111/fire.12130">[Link]</a>
-                    <p> Gan Q, Wei WC and Johnstone D (2015)  'A faster estimation method for the probability of informed trading using hierarchical agglomerative clustering', <cite>Quantitative Finance</cite>, vol.15:11, pp. 1805-21 </p> <a href="http://www.tandfonline.com/doi/full/10.1080/14697688.2015.1023336">[Link]</a>
-                    <p> Wei WC  (2010)  'Cloning hedge funds: a factor based approach', <cite>JASSA: The Finsia Journal of Applied Finance </cite>, Autumn, 2010, Issue 1, p.22(8)  </p>  <a href="https://search.library.uq.edu.au/primo-explore/fulldisplay?docid=TN_gale_ofa227731173&context=PC&vid=61UQ&lang=en_US&search_scope=61UQ_All&adaptor=primo_central_multiple_fe&tab=61uq_all&query=any,contains,cloning%20hedge%20funds&sortby=rank&facet=rtype,exclude,newspaper_articles&facet=rtype,exclude,reviews&offset=0">[Link]</a>
+                    <p><a href="https://link.springer.com/article/10.1007/s11156-023-01148-1"> Koutmos D and WC Wei (2023)  'Nowcasting Bitcoin's crash risk with order imbalance', <cite> Review of Quantitative Finance and Accounting </cite>, 1-30 </a> </p>
+                    <p><a href="https://link.springer.com/chapter/10.1007/978-3-031-29050-3_6"> Wei WC and D Koutmos (2023)  'Investor Attention and Bitcoin Trading Behaviors' <cite>Essays on Financial Analytics</cite>, Springer </a> </p> 
+                    <p><a href="https://www.sciencedirect.com/science/article/pii/S0927538X2030665X"> Humphrey J, Hunter D, Hoang K and WC Wei (2020) 'Managerial rents vs. shareholder value in closed-end funds: evidence from China', <cite> Pacific-Basin Finance Journal</cite>, vol.64, 1014-53 </a> </p> 
+                    <p><a href="https://www.sciencedirect.com/science/article/pii/S0165176518302556"> Wei WC (2018)  'The impact of Tether grants on Bitcoin', <cite>Economics Letters</cite>, vol.171, pp. 19-22 </a> </p>
+                    <p><a href="https://www.sciencedirect.com/science/article/pii/S0165176518301320"> Wei WC (2018)  'Liquidity and market efficiency in cryptocurrencies', <cite>Economics Letters</cite>, vol.168, pp. 21-24 </a> </p>
+                    <p><a href="http://dx.doi.org/10.1111/fire.12130"> Gan Q, Wei WC and Johnstone D (2017)  'Does the Probability of Informed Trading Model Fit Empirical Data?', <cite>Financial Review</cite>, vol.52:1, pp. 5-35 </a> </p>
+                    <p><a href="http://www.tandfonline.com/doi/full/10.1080/14697688.2015.1023336"> Gan Q, Wei WC and Johnstone D (2015)  'A faster estimation method for the probability of informed trading using hierarchical agglomerative clustering', <cite>Quantitative Finance</cite>, vol.15:11, pp. 1805-21 </a></p>
+                    <p> <a href="https://fbe.unimelb.edu.au/__data/assets/pdf_file/0010/2591785/203.pdf">Wei WC  (2010)  'Cloning hedge funds: a factor based approach', <cite>JASSA: The Finsia Journal of Applied Finance </cite>, Autumn, 2010, Issue 1, p.22(8) </a> </p> 
                 
                 <hr class="thick-line">
                 <h2> Conferences </h2>
@@ -204,15 +246,15 @@
                 <hr class="thick-line">
                 <h2>Profile</h2>
                 <hr class="thin-line">
-                <p>
-                <a href="https://orcid.org/0000-0001-7113-0089" target="_blank">ORCID</a>
-                <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=1886430" target="_blank">SSRN</a>
-                <a href="https://au.linkedin.com/in/wang-chun-wei-cfa-99a43a98" target="_blank">LinkedIn</a>
-                <a href="https://scholar.google.com.au/citations?user=3tzF4zgAAAAJ" target="_blank">Google Scholar</a>
+                <p> <a href="https://orcid.org/0000-0001-7113-0089" target="_blank"> >ORCID</a> </p>
+                <p> <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=1886430" target="_blank"> >SSRN</a> </p>
+                <p> <a href="https://www.linkedin.com/in/wang-chun-wei-phd-cfa-99a43a98/" target="_blank"> >LinkedIn</a> </p>
+                <p><a href="https://scholar.google.com.au/citations?user=3tzF4zgAAAAJ" target="_blank"> >Google Scholar</a>
                 </p>
 
-                <p> Quantitative Portfolio Manager at Realindex Investments. <br />
-                Formerly, an Assistant Professor / Lecturer of Finance at the University of Queensland. </p>
+                <p>I am a Quantitative Portfolio Manager at Realindex Investments, First Sentier Investors. <br />
+                I was formerly, an Assistant Professor / Lecturer of Finance at the University of Queensland. <br /> 
+                </p>
 
                 <hr class="thick-line">
                 <h2>Education</h2>
@@ -222,6 +264,7 @@
                 MCS, University of Illinois at Urbana-Champaign<br />
                 BComm(Hons) in Actuarial Studies, University of Melbourne  <br />
                 GradCert in Computing, University of New South Wales <br />
+                CFA Charterholder <br />
                 </p>
                 <p>
                 2010 - 2013: Capital Markets CRC PhD Research Scholarship<br />
