@@ -28,6 +28,7 @@
                 margin: 0;
                 font-size: 100%;
                 color: var(--black);
+                padding: 30px 80px;
             }
 
             body {
@@ -45,14 +46,15 @@
             }
 
             a:hover {
-                color: var(--orange);
+                color: var(--wetSand);
+                background-color: var(--black);
                 
             }
 
             main {
                 position: relative;
                 background-size: 120% 120%;
-                padding: 0.5vw 1.5vw 1.5vw 1.5vw;
+                padding: 0.5vw 15vw 15vw 1.5vw;
                 z-index: 1;
                 overflow: hidden;
                 opacity: 1;
@@ -64,12 +66,12 @@
 
             .thick-line {
                 border: none;
-                border-top: 5px solid black; 
+                border-top: 5px solid var(--black); 
             }
 
             .thin-line {
                 border: none;
-                border-top: 2px solid black; /* Adjust the thickness as per your requirement */
+                border-top: 2px solid var(--black); 
             }
 
             h1 {
@@ -122,8 +124,7 @@
             /* Style the tab content */
             .tabcontent {
                 display: none;
-                padding: 6px 12px;
-
+                padding: 0px 0px;
             }
 
             @media screen and (max-width: 600px) {
@@ -188,7 +189,9 @@
     <body>
 
         <div class="container">
+            
             <h2>WANG CHUN WEI</h2>
+            <hr class="thin-line">
             <div class="space"></div>
             <h1 class="anim">
                 <span class="anim-btn"> CV >>>>>>>>> </span>
@@ -201,6 +204,7 @@
               <button class="tablinks" onclick="openTab(event, 'About')"><h2> >About Me</h2></button>
             </div>
       
+
             <!-- Create the tab content -->
             <div id="Research" class="tabcontent">
                 <hr class="thick-line">
@@ -302,7 +306,9 @@
                   evt.currentTarget.className += " active";
                 }
             </script>
-
+            <div class="space"></div>
+            <p>  (c) 2023  Wang Chun Wei </p>
+            <hr class="thin-line">
         </div>
     </body>
 
