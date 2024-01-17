@@ -17,7 +17,7 @@
                 --wetSand: white;
                 --black: #2B2B2B;
                 --grey: grey;
-                --orange: #20C073;
+                --orange: #00FF00;
                 --size40: 40px;
                 --size8: 8px;
             }
@@ -25,14 +25,30 @@
             body, html {
                 background-color: var(--wetSand);
                 font-family: 'Manrope', sans-serif;
-                margin: 0;
+                margin: 0 auto;
                 font-size: 100%;
                 color: var(--black);
-                padding: 30px 80px;
+                padding: 20px 10px;
             }
 
+            @media (min-width: 400px) {
+                body {
+                    width: 350px;
+                }
+            }
+            @media (min-width: 800px) {
+                body {
+                    width: 600px;
+                }
+            }
+            @media (min-width: 1500px) {
+                body {
+                    width: 1200px;
+                }
+            }
+
+
             body {
-                background-color: var(--wetSand);
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;
                 scrollbar-width: none;
@@ -83,6 +99,11 @@
             h2 {
                 font-size: 24px;
                 margin-bottom: 10px;
+            }
+            h3 {
+                font-size: 28px;
+                margin-top: 2px;
+                margin-bottom: 2px;
             }
             .left-align {
                 text-align: right;
@@ -190,7 +211,7 @@
 
         <div class="container">
             
-            <h2>WANG CHUN WEI</h2>
+            <h3>Wang Chun Wei, PhD, CFA</h3>
             <hr class="thin-line">
             <div class="space"></div>
             <h1 class="anim">
